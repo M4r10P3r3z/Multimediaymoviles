@@ -1,5 +1,7 @@
 package com.example.calculadora;
 
+import android.app.Activity;
+import android.view.inputmethod.InputMethodManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -16,7 +18,7 @@ import android.widget.ToggleButton;
 
 import java.text.DecimalFormat;
 
-public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText etNumero1, etNumero2;
     private TextView tvResultado;
@@ -55,27 +57,28 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         tbResta.setOnClickListener(this);
         tbMulti.setOnClickListener(this);
         tbDivi.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
+
         if (v.getId() == R.id.bCalcular) operar(v);
         else if (v.getId() == R.id.bLimpiar) limpiar(v);
         else if (v.getId() == R.id.bGuardar) guardarDatos(v);
         else if (v.getId() == R.id.bRecuperar) recuperarDatos(v);
         else {
             apagarTooggleButtons(v);
-            if (v.getId()==R.id.tbSuma) tbSuma.setChecked(true);
-            else if (v.getId()==R.id.tbResta) tbResta.setChecked(true);
-            else if (v.getId()==R.id.tbMulti) tbMulti.setChecked(true);
-            else if (v.getId()==R.id.tbDivi) tbDivi.setChecked(true);
+            if (v.getId() == R.id.tbSuma) tbSuma.setChecked(true);
+            else if (v.getId() == R.id.tbResta) tbResta.setChecked(true);
+            else if (v.getId() == R.id.tbMulti) tbMulti.setChecked(true);
+            else if (v.getId() == R.id.tbDivi) tbDivi.setChecked(true);
         }
     }
 
     public void operar(View v) {
         Double n1, n2, res;
         try {
+            ocultarTeclado(this);
             n1 = Double.parseDouble(etNumero1.getText().toString());
             n2 = Double.parseDouble(etNumero2.getText().toString());
             if (tbSuma.isChecked()) res = n1 + n2;
@@ -150,5 +153,14 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         mensaje.setTextColor(getColor(R.color.white));
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
+    }
+
+    public static void ocultarTeclado(Activity activity) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) activity.getSystemService(
+                        Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(
+                activity.getCurrentFocus().getWindowToken(),
+                0);
     }
 }
