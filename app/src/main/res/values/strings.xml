@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="number1">Número 1</string>
+    <string name="number2">Número 2</string>
+    <string name="boton_calcular">Calcular</string>
+    <string name="boton_limpiar">Limpiar</string>
+    <string name="boton_guardar">Guardar</string>
+    <string name="boton_recuperar">Recuperar</string>
+    <string name="suma">+</string>
+    <string name="resta">-</string>
+    <string name="multiplicacion">*</string>
+    <string name="division">/</string>
+    <string name="resultado">Resultado</string>
+    <string name="cadena_vacia"/>
+    <string name="error_no_operacion">Elija una operacion</string>
+    <string name="error_no_numeros">Rellena los números</string>
+    <string name="error_division_cero">No se puede dividir por cero</string>
+    <string name="error_vacio">empty String</string>
+    <string name="pattern_numero">0.########</string>
+    <string name="datos_guardados">"Datos guardados"</string>
+    <string name="datos_recuperados">"Datos recuperados"</string>
+</resources>

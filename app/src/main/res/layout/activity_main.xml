@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <EditText
+        android:id="@+id/etNumero1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/borde_texto"
+        android:cursorVisible="true"
+        android:defaultFocusHighlightEnabled="false"
+        android:ems="10"
+        android:hint="@string/number1"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNumero2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/borde_texto"
+        android:cursorVisible="true"
+        android:defaultFocusHighlightEnabled="false"
+        android:ems="10"
+        android:hint="@string/number2"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/borde_texto"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:text="@string/resultado"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bCalcular" />
+
+    <Button
+        android:id="@+id/bCalcular"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/boton_calcular"
+        android:background="@drawable/boton_redondeado"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/grupoToggle" />
+
+    <Button
+        android:id="@+id/bLimpiar"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/boton_limpiar"
+        android:background="@drawable/boton_redondeado"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/grupoToggle" />
+
+    <Button
+        android:id="@+id/bGuardar"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/boton_guardar"
+        android:background="@drawable/boton_redondeado"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
+
+    <Button
+        android:id="@+id/bRecuperar"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/boton_recuperar"
+        android:background="@drawable/boton_redondeado"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
+
+    <TableLayout
+        android:id="@+id/grupoToggle"
+        android:layout_width="310dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNumero2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <ToggleButton
+                android:id="@+id/tbSuma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/togglebutton_circular"
+                android:gravity="center"
+                android:text="@string/suma"
+                android:textColor="@color/toggle_color"
+                android:textOff="@string/suma"
+                android:textOn="@string/suma"
+                android:textSize="30sp" />
+
+
+            <ToggleButton
+                android:id="@+id/tbResta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/togglebutton_circular"
+                android:gravity="center"
+                android:text="@string/resta"
+                android:textColor="@color/toggle_color"
+                android:textOff="@string/resta"
+                android:textOn="@string/resta"
+                android:textSize="30sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <ToggleButton
+                android:id="@+id/tbMulti"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/togglebutton_circular"
+                android:gravity="center"
+                android:text="@string/multiplicacion"
+                android:textColor="@color/toggle_color"
+                android:textOff="@string/multiplicacion"
+                android:textOn="@string/multiplicacion"
+                android:textSize="30sp" />
+
+            <ToggleButton
+                android:id="@+id/tbDivi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/togglebutton_circular"
+                android:gravity="center"
+                android:text="@string/division"
+                android:textColor="@color/toggle_color"
+                android:textOff="@string/division"
+                android:textOn="@string/division"
+                android:textSize="30sp" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
