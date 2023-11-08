@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/black">
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/etNumero1"
@@ -69,6 +68,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:text="@string/boton_calcular"
+        android:textColor="@color/boton_color"
         android:background="@drawable/boton_redondeado"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"
@@ -81,6 +81,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
         android:text="@string/boton_limpiar"
+        android:textColor="@color/boton_color"
         android:background="@drawable/boton_redondeado"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="20sp"
@@ -93,6 +94,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:text="@string/boton_guardar"
+        android:textColor="@color/boton_color"
         android:background="@drawable/boton_redondeado"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"
@@ -105,6 +107,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
         android:text="@string/boton_recuperar"
+        android:textColor="@color/boton_color"
         android:background="@drawable/boton_redondeado"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="18sp"
